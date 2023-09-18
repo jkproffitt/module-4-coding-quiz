@@ -77,11 +77,6 @@ function timeIsUpMessage() {
   timerEl.textContent = message;
 }
 
-// choice.addEventListener('click',(event) => {
-//   console.log(event)
-// }
-// )
-
 function checkAnswer(answer){
   if (answer == questions[quizIndex -1].answer){
     answer = true;
@@ -106,7 +101,6 @@ function nextQuestion(answer) {
     countdown();
     quiz.style.display = 'flex';
   } else {
-    console.log(answer)
     checkAnswer(answer)
   }
   landingEl.style.display = 'none';
