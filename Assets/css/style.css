@@ -1,0 +1,84 @@
+:root {
+    --pink: #c046d0;
+    --purple: #713371;
+    --light: #fff;
+    --grey: grey;
+    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: space-between;
+    align-items: center;
+}
+
+section { 
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+h1 {
+    align-self: center;
+}
+button {
+    border: none;
+    border-radius: 5px;
+    font-family: "Lucida Grande";
+    font-size: 1.25rem;
+    text-decoration: none;
+    padding: 0.1rem;
+
+}
+button:hover{
+    background: var(--purple);
+}
+.high-score {
+    background: var(--pink);
+    color: white;
+}
+.startBtn {
+    color: white;
+    background: var(--grey);
+    width: fit-content;
+    align-self: center;
+    display: flex;
+}
+.saveBtn{
+    color: white;
+    background: var(--grey);
+    width: fit-content;
+    align-self: center;
+    display: flex;
+}
+.answerBtn, .saveBtn {
+    margin: .5rem;
+}
+
+#countdown {
+    font-size: 1rem;
+}
+
+#msg.success,
+#msg.error {
+    visibility: visible;
+}
+#msg.success {
+    color: green;
+    ;
+}
+
+#msg.error {
+    color: red;
+}
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}

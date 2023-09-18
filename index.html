@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<title>Coding Quiz</title>
+		<link rel="stylesheet" href="./assets/css/style.css" />
+	</head>
+	<body>
+		<header>
+			<div class="container">
+				<a href="highscore.html"
+					><button class="high-score">View High Scores</button>
+				</a>
+				<p id="countdown"></p>
+			</div>
+		</header>
+		<section id="landing">
+			<h1 class="welcome">Coding Quiz Challenge</h1>
+			<p id="main">
+				Try to answer the questions to the best of your ability within
+				the time limit. Keep in mind- incorrect answers will penalize
+				your score.
+			</p>
+			<button class="startBtn" onclick="nextQuestion()">
+				Start Quiz
+			</button>
+		</section>
+		<section style="display: none" id="quiz">
+			<h2>Question: <span id="question"></span></h2>
+			<div>
+				<button
+					id="option1"
+					class="startBtn answerBtn"
+					onclick="nextQuestion(this.innerHTML)"
+				/>
+				<button
+					id="option2"
+					class="startBtn answerBtn"
+					onclick="nextQuestion(this.innerHTML)"
+				/>
+				<button
+					id="option3"
+					class="startBtn answerBtn"
+					onclick="nextQuestion(this.innerHTML)"
+				/>
+				<button
+					id="option4"
+					class="startBtn answerBtn"
+					onclick="nextQuestion(this.innerHTML)"
+				/>
+			</div>
+			<div id="feedback"></div>
+		</section>
+		<section style="display: none" id="saveAttempt">
+			<h2 class="welcome">All Done!</h2>
+			<p>Score: <span id="score"></span></p>
+			<label>Initials: <input id="inits" type="text" /> </label>
+			<button class="saveBtn" onclick="saveScore()">Save</button>
+		</section>
+		<section style="display: none">
+			<div class="wrapper">
+				<h1>Highscores</h1>
+				<ol id="highscores"></ol>
+				<a href="index.html"
+					><button class="high-score">Go Back</button></a
+				>
+				<button id="clear" class="high-score">Clear Highscores</button>
+			</div>
+		</section>
+		<script src="./assets/js/script.js"></script>
+	</body>
+</html>
