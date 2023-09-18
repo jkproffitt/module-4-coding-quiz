@@ -1,22 +1,23 @@
 var highScores = localStorage.getItem('grade');
 var value = document.querySelector('#highScores');
-// document.getElementById('highScores').innerHTML = highScores;
-console.log(highScores);
 
 function showScore() {
+
     scores = JSON.parse(highScores);
+    highScores.innerHTML = '';
 
     for (var i = 0; i < scores.length; i++) {
-    var score = scores[i];
+    var score = JSON.stringify(Object.values(scores[i])).replace(/["\[\]]/g,'').replace(/[,]/g, ' - ' );
     var li = document.createElement("li");
     li.innerHTML = score;
     li.setAttribute("data-index", i);
     value.appendChild(li);
-    console.log(score)
   }
 }
 
 function clearScores() {
-  localStorage.setItem('grade') = '';
+  localStorage.clear()
+  value.remove()
+  showScore()
 }
 showScore()

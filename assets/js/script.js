@@ -122,7 +122,6 @@ function nextQuestion(answer) {
     var secondChoice = document.getElementById('option2').innerHTML = questions[quizIndex].choices[1];
     var thirdChoice = document.getElementById('option3').innerHTML = questions[quizIndex].choices[2];
     var fourthChoice = document.getElementById('option4').innerHTML = questions[quizIndex].choices[3];
-    // answerWasCorrect();
     quizIndex++;
   } else {
     getScore();
@@ -135,10 +134,9 @@ function getScore(){
   document.getElementById("score").innerHTML = correctCounter;
 }
 
-function saveScore(event){
-  // event.preventDefault();
+function saveScore(){
   inits = document.getElementById('inits').value;
   scoreBoard.push({initals: inits, score: correctCounter});
   localStorage.setItem('grade', JSON.stringify(scoreBoard));
-  console.log(scoreBoard);
+
 }
