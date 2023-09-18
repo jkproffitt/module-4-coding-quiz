@@ -88,10 +88,12 @@ function checkAnswer(answer){
 
 function answerWasCorrect(answer) {
   if (answer === false) {
-    feedbackEl.textContent="Wrong","your answer was incorrect";
+    feedbackEl.textContent="Sorry, your answer was incorrect";
+    feedbackEl.className='incorrect';
     timeLeft = timeLeft - 15;
   } else {
-    feedbackEl.textContent="Correct!", "you answered successfully";
+    feedbackEl.textContent="Correct!";
+    feedbackEl.className='feedback';
     correctCounter ++;
   }
 }
