@@ -1,4 +1,12 @@
-// var scoreBoard = [];
+var highScores = localStorage.getItem('grade');
+document.getElementById('highScores').innerHTML = highScores;
+console.log(highScores);
 
-// scoreBoard.push({Initals : inits, score: correctCounter})
-// console.log(scoreBoard)
+function showScore() {
+    for (var i = 0; i < highScores.length; i++) {
+    var score = highScores[i];
+    var li = document.createElement("li");
+    li.textContent = score;
+    li.setAttribute("data-index", i);    
+  }
+}

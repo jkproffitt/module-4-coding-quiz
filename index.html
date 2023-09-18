@@ -21,7 +21,7 @@
 			<p id="main">
 				Try to answer the questions to the best of your ability within
 				the time limit. Keep in mind- incorrect answers will penalize
-				your score.
+				your score and time limit.
 			</p>
 			<button class="startBtn" onclick="nextQuestion()">
 				Start Quiz
@@ -51,13 +51,15 @@
 					onclick="nextQuestion(this.innerHTML)"
 				/>
 			</div>
-			<div id="feedback"></div>
+			<div id="feedback" class=""></div>
 		</section>
 		<section style="display: none" id="saveAttempt">
 			<h2 class="welcome">All Done!</h2>
 			<p>Score: <span id="score"></span></p>
 			<label>Initials: <input id="inits" type="text" /> </label>
-			<button class="saveBtn" onclick="saveScore()">Save</button>
+			<a href="highscore.html?/score=scores">
+				<button class="saveBtn" onclick="saveScore()">Save</button>
+			</a>
 		</section>
 		<section style="display: none">
 			<div class="wrapper">

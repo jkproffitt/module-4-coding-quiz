@@ -4,7 +4,6 @@
     --light: #fff;
     --grey: grey;
     font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
-
 }
 
 .container {
@@ -40,17 +39,18 @@ button:hover{
 }
 .high-score {
     background: var(--pink);
-    color: white;
+    color: var(--light);
+    margin: .2rem;
 }
 .startBtn {
-    color: white;
+    color: var(--light);
     background: var(--grey);
     width: fit-content;
     align-self: center;
     display: flex;
 }
 .saveBtn{
-    color: white;
+    color: var(--light);
     background: var(--grey);
     width: fit-content;
     align-self: center;
@@ -64,18 +64,6 @@ button:hover{
     font-size: 1rem;
 }
 
-#msg.success,
-#msg.error {
-    visibility: visible;
-}
-#msg.success {
-    color: green;
-    ;
-}
-
-#msg.error {
-    color: red;
-}
 .wrapper {
     display: flex;
     flex-direction: column;

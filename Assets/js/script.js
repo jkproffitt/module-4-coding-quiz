@@ -3,7 +3,6 @@ var timerEl = document.getElementById('countdown');
 var mainEl = document.getElementById('main');
 var feedbackEl = document.getElementById('feedback');
 var questionsEl = document.getElementById('questions');
-var initialsEl = document.getElementById('initials');
 var landingEl = document.getElementById('landing');
 var quiz = document.getElementById('quiz');
 var saveAttempt = document.getElementById('saveAttempt');
@@ -12,7 +11,7 @@ var correctCounter = 0;
 var isCorrect = false;
 var timerElement = document.querySelector(".timer-count");
 var message ='Time is up!';
-var inits = "";
+var inits = document.getElementById('inits').value;
 var scoreBoard = [];
 var startButton = document.getElementsByClassName("startBtn");
 var submitBtn = document.querySelector('.submit');
@@ -53,14 +52,6 @@ var questions = [
   },
 ];
 
-
-// function init() {
-//   getWins();
-//   getlosses();
-//   quiz.style.display = 'none';
-//   saveAttempt.style.display = 'none';
-// }
-
 var timeLeft = questions.length * 15;
 
 function countdown() {
@@ -71,7 +62,6 @@ function countdown() {
       feedbackEl.textContent="";
       
     } else if (timeLeft == 1) {
-      // When `timeLeft` is equal to 1, rename to 'second' instead of 'seconds'
       timerEl.textContent = timeLeft + ' second remaining';
       timeLeft--;
     } else {
@@ -137,14 +127,12 @@ function nextQuestion(answer) {
 function getScore(){
   quiz.style.display = "none";
   saveAttempt.style.display = "flex"
-  document.getElementById("score").innerHTML = correctCounter
+  document.getElementById("score").innerHTML = correctCounter;
 }
 
 function saveScore(){
-  inits = document.getElementById("inits").value
-  scoreBoard.push({Initals : inits, score: correctCounter})
-  console.log(scoreBoard)
-  
-//   console.log(inits)
+  inits = document.getElementById('inits').value;
+  scoreBoard.push({initals: inits, score: correctCounter});
+  localStorage.setItem('grade', JSON.stringify(scoreBoard));
+  console.log(scoreBoard);
 }
-// export {inits}; 
