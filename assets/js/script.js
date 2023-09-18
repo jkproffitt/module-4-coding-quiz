@@ -12,11 +12,20 @@ var isCorrect = false;
 var timerElement = document.querySelector(".timer-count");
 var message ='Time is up!';
 var inits = document.getElementById('inits').value;
-var scoreBoard = [];
 var startButton = document.getElementsByClassName("startBtn");
 var submitBtn = document.querySelector('.submit');
 var sfxRight = new Audio('assets/sfx/correct.wav');
 var sfxWrong = new Audio('assets/sfx/incorrect.wav');
+
+if(localStorage.getItem('grade') == null) {
+var scoreBoard = [];
+} else {
+  var scoreBoard = JSON.parse(localStorage.getItem('grade'));
+}
+
+console.log(scoreBoard);
+
+
 var questions = [
   {
     title: 'Commonly used data types DO NOT include:',
@@ -127,7 +136,7 @@ function getScore(){
 }
 
 function saveScore(event){
-  event.preventDefault();
+  // event.preventDefault();
   inits = document.getElementById('inits').value;
   scoreBoard.push({initals: inits, score: correctCounter});
   localStorage.setItem('grade', JSON.stringify(scoreBoard));
