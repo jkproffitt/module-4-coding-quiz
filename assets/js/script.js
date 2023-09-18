@@ -126,7 +126,8 @@ function getScore(){
   document.getElementById("score").innerHTML = correctCounter;
 }
 
-function saveScore(){
+function saveScore(event){
+  event.preventDefault();
   inits = document.getElementById('inits').value;
   scoreBoard.push({initals: inits, score: correctCounter});
   localStorage.setItem('grade', JSON.stringify(scoreBoard));

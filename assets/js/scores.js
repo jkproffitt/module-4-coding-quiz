@@ -10,3 +10,7 @@ function showScore() {
     li.setAttribute("data-index", i);    
   }
 }
+
+function clearScores() {
+  localStorage.setItem('grade') = '';
+}
