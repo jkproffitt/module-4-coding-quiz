@@ -37,6 +37,9 @@ button {
 button:hover{
     background: var(--purple);
 }
+a{
+    text-decoration: none;
+}
 .high-score {
     background: var(--pink);
     color: var(--light);
@@ -55,6 +58,7 @@ button:hover{
     width: fit-content;
     align-self: center;
     display: flex;
+    text-decoration: none;
 }
 .answerBtn, .saveBtn {
     margin: .5rem;
